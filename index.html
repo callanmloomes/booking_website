@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Studio | Photo and event space for hire</title>
+<meta name="description" content="A hireable space in [SUBURB] for photo shoots, content days and small gatherings. Book by the hour or take the whole day.">
+<meta property="og:title" content="Your Studio">
+<meta property="og:description" content="A hireable space for photo shoots, content days and small gatherings.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F5D7D2'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%233A3D4E'/%3E%3C/svg%3E">
+
+<!--
+  EDITING GUIDE
+  1. Links: set your Instagram and SimplyBook.me addresses once, in the SITE
+     block at the bottom of this file.
+  2. Text: everything in [SQUARE BRACKETS] is a placeholder. Search for "["
+     and replace each one. "Your Studio" is the stand-in business name.
+  3. Photos: put image files in an "images" folder next to this file, then
+     replace the <span class="photo__label"> inside a photo slot with, e.g.
+     <img src="images/hero.jpg" alt="Wide view of the room">
+  4. Colours and fonts: change the variables in :root below.
+-->
+
+<style>
+:root {
+  --ground: #FBFAF8;
+  --ink: #3A3D4E;
+  --dark: #454A61;
+  --pink: #F5D7D2;
+  --pink-deep: #EDC2BB;
+  --yellow: #F8EBBF;
+  --green: #D8E6D6;
+  --white: #FFFFFF;
+  --line: #ECE8E2;
+  --rule: rgba(58, 61, 78, 0.22);
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 20px;
+  --pad: clamp(20px, 3.6vw, 48px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, dl, dd, ol { margin: 0; }
+ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+a, button { transition: opacity 0.15s; }
+a:hover, button:hover:not(:disabled) { opacity: 0.72; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--white); }
+
+.page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.panel { border-radius: var(--radius); padding: var(--pad); }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.display { font-family: var(--display); font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 0 26px;
+  border-radius: 12px; border: 2px solid var(--ink);
+  background: var(--ink); color: var(--white);
+  font-weight: 600; text-decoration: none;
+}
+.btn--small { min-height: 48px; padding: 0 22px; font-size: 15px; }
+.btn--light { background: var(--white); border-color: var(--white); color: var(--ink); }
+.btn--outline-light { background: transparent; border-color: var(--white); color: var(--white); }
+.btn--yellow { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+.btn svg, .text-link svg { flex: none; }
+.text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; }
+
+/* Photo slots */
+.photo {
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+  padding: 20px;
+}
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo__label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+
+/* Hero */
+.hero { background: var(--pink); display: flex; flex-direction: column; gap: 40px; padding-top: 24px; }
+.nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+.nav__brand { font-family: var(--display); font-weight: 500; font-size: 28px; line-height: 1; letter-spacing: -0.01em; text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; }
+.nav__links { display: flex; flex-wrap: wrap; gap: 0 28px; font-size: 15px; font-weight: 500; }
+.nav__links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+.hero__body { display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch; }
+.hero__text { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+.hero__text h1 { font-size: clamp(44px, 5.6vw, 78px); line-height: 1.03; letter-spacing: -0.015em; }
+.hero__text p { font-size: 20px; line-height: 1.5; max-width: 480px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__photo {
+  flex: 1 1 420px; min-width: 0; min-height: clamp(320px, 42vw, 560px);
+  background: var(--pink-deep);
+  border-radius: 16px 16px 16px clamp(80px, 10vw, 140px);
+  align-items: flex-start; justify-content: flex-end;
+}
+.hero__photo .photo__label { background: var(--white); border-radius: 8px; padding: 6px 14px; position: relative; }
+
+/* The space */
+.split { display: flex; flex-wrap: wrap; gap: 16px; }
+.about { flex: 1.3 1 420px; min-width: 0; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.about h2 { font-size: clamp(32px, 3.5vw, 46px); line-height: 1.1; }
+.about p { font-size: 18px; max-width: 560px; }
+.about .text-link { margin-top: auto; }
+.specs { flex: 1 1 340px; min-width: 0; background: var(--yellow); padding: clamp(28px, 3vw, 40px); }
+.specs h3 { font-size: 26px; line-height: 1.2; margin-bottom: 12px; }
+.specs__row { display: flex; justify-content: space-between; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--rule); }
+.specs__row:last-child { border-bottom: 0; }
+.specs__row dt { font-weight: 600; }
+.specs__row dd { text-align: right; }
+
+/* Gallery */
+.gallery { background: var(--dark); color: var(--white); padding-inline: 0; display: flex; flex-direction: column; gap: 30px; }
+.gallery__head, .gallery__foot { padding-inline: var(--pad); }
+.gallery__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.gallery__head h2 { font-size: clamp(32px, 3.4vw, 46px); line-height: 1.1; }
+.gallery__controls { display: flex; gap: 10px; }
+.round-btn {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid var(--white); background: transparent; color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.round-btn--solid { background: var(--white); color: var(--ink); }
+.round-btn:disabled { opacity: 0.35; cursor: default; }
+.gallery__track {
+  display: flex; gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  padding-inline: var(--pad); scroll-padding-inline: var(--pad);
+  scrollbar-width: none;
+}
+.gallery__track::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 min(80%, 540px); height: clamp(300px, 34vw, 420px); border-radius: 14px; scroll-snap-align: start; background: var(--white); }
+.slide--narrow { flex-basis: min(80%, 340px); }
+.slide--yellow { background: var(--yellow); }
+.slide--pink { background: var(--pink); }
+.slide--green { background: var(--green); }
+
+/* Uses */
+.uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.use { background: var(--white); border: 1px solid var(--line); padding: 36px; display: flex; flex-direction: column; gap: 12px; min-height: 280px; }
+.use__icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.use__icon--pink { background: var(--pink); }
+.use__icon--yellow { background: var(--yellow); }
+.use__icon--green { background: var(--green); }
+.use h3 { font-size: 32px; line-height: 1.1; }
+
+/* Booking */
+.booking { background: var(--green); padding: clamp(32px, 4.2vw, 56px); display: flex; flex-wrap: wrap; gap: 40px 48px; align-items: center; }
+.booking__text { flex: 1.2 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+.booking__text h2 { font-size: clamp(42px, 5vw, 68px); line-height: 1.02; letter-spacing: -0.015em; }
+.booking__text p { font-size: 19px; max-width: 460px; }
+.booking__text .btn { margin-top: 8px; }
+.booking__text .rates { font-size: 15px; }
+.steps { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.steps li { background: var(--white); border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; gap: 18px; font-weight: 500; }
+.steps__n { font-family: var(--display); font-weight: 500; font-size: 28px; line-height: 1; width: 28px; flex: none; }
+
+/* Footer */
+.footer { background: var(--dark); color: var(--white); padding: clamp(32px, 4.2vw, 56px) clamp(24px, 4.2vw, 56px) 32px; display: flex; flex-direction: column; gap: 44px; }
+.footer__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.footer__brand { font-size: clamp(36px, 4.2vw, 56px); line-height: 1; letter-spacing: -0.015em; }
+.footer__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 28px 32px; }
+.contact > div { min-width: 0; display: flex; flex-direction: column; gap: 6px; overflow-wrap: anywhere; }
+.contact .eyebrow { color: var(--green); }
+.footer__base { border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 22px; font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+@media (max-width: 640px) {
+  .nav__links { order: 3; width: 100%; gap: 0 20px; }
+  .hero { gap: 28px; }
+  .use { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html, .gallery__track { scroll-behavior: auto; }
+  a, button { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+
+  <header class="panel hero">
+    <nav class="nav" aria-label="Main">
+      <a class="nav__brand" href="#top">Your Studio</a>
+      <div class="nav__links">
+        <a href="#space">The space</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#uses">Hire it for</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn--small" data-link="booking" href="https://simplybook.me/">Book the room</a>
+    </nav>
+    <div class="hero__body">
+      <div class="hero__text">
+        <h1 class="display">One room, ready for your shoot.</h1>
+        <p>A hireable space in [SUBURB] for photo shoots, content days and small gatherings. Book it by the hour or take the whole day.</p>
+        <div class="hero__actions">
+          <a class="btn" data-link="booking" href="https://simplybook.me/">Check availability
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a class="btn btn--light" data-link="instagram" href="https://www.instagram.com/">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            See it on Instagram
+          </a>
+        </div>
+      </div>
+      <!-- Hero photo: replace the span with <img src="images/hero.jpg" alt="..."> -->
+      <div class="photo hero__photo">
+        <span class="photo__label">Photo · Wide shot of the room</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="split" id="space">
+    <div class="panel about">
+      <div class="eyebrow">The space</div>
+      <h2 class="display">A room that works around your shoot.</h2>
+      <p>It is one open room of [XX] m² with [DESCRIBE THE LIGHT] and enough floor to move a backdrop, a table or a small crowd. You hire the whole thing and set it up the way you want.</p>
+      <a class="text-link" data-link="instagram" href="https://www.instagram.com/">Recent shoots on Instagram
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="panel specs">
+      <h3 class="display">At a glance</h3>
+      <dl>
+        <div class="specs__row"><dt>Floor area</dt><dd>[XX] m²</dd></div>
+        <div class="specs__row"><dt>Ceiling height</dt><dd>[X.X] m</dd></div>
+        <div class="specs__row"><dt>Capacity</dt><dd>[XX] people</dd></div>
+        <div class="specs__row"><dt>Light</dt><dd>[WINDOW DIRECTION]</dd></div>
+        <div class="specs__row"><dt>Included</dt><dd>[BACKDROPS, STANDS, FURNITURE]</dd></div>
+        <div class="specs__row"><dt>Parking</dt><dd>[PARKING DETAILS]</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="panel gallery on-dark" id="gallery">
+    <div class="gallery__head">
+      <h2 class="display">Have a look around</h2>
+      <div class="gallery__controls">
+        <button class="round-btn" type="button" id="gallery-prev" aria-label="Previous photos">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        </button>
+        <button class="round-btn round-btn--solid" type="button" id="gallery-next" aria-label="Next photos">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Carousel: add, remove or reorder slides freely. Add "slide--narrow" for a portrait photo. -->
+    <div class="gallery__track" id="gallery-track" tabindex="0" role="group" aria-label="Photos of the space">
+      <div class="photo slide"><span class="photo__label">Photo · Wide shot of the room</span></div>
+      <div class="photo slide slide--narrow slide--yellow"><span class="photo__label">Photo · Window light</span></div>
+      <div class="photo slide slide--pink"><span class="photo__label">Photo · Backdrop set up</span></div>
+      <div class="photo slide slide--narrow slide--green"><span class="photo__label">Photo · Props corner</span></div>
+      <div class="photo slide slide--yellow"><span class="photo__label">Photo · A shoot in progress</span></div>
+      <div class="photo slide"><span class="photo__label">Photo · Evening event set up</span></div>
+    </div>
+    <div class="gallery__foot">
+      <a class="text-link" data-link="instagram" href="https://www.instagram.com/">More from the room at <span data-text="handle">@[yourhandle]</span></a>
+    </div>
+  </section>
+
+  <section class="uses" id="uses" aria-label="What the space is hired for">
+    <article class="panel use">
+      <div class="use__icon use__icon--pink">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+      </div>
+      <h3 class="display">Photo shoots</h3>
+      <p>Portraits, product, lookbooks and family sessions, with room to step back from your subject.</p>
+    </article>
+    <article class="panel use">
+      <div class="use__icon use__icon--yellow">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+      </div>
+      <h3 class="display">Content days</h3>
+      <p>Film a month of reels, brand and social content in a single booking.</p>
+    </article>
+    <article class="panel use">
+      <div class="use__icon use__icon--green">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3 class="display">Small events</h3>
+      <p>Workshops, launches and gatherings for up to [XX] people.</p>
+    </article>
+  </section>
+
+  <section class="panel booking" id="book">
+    <div class="booking__text">
+      <div class="eyebrow">Booking</div>
+      <h2 class="display">Book the room</h2>
+      <p>Bookings run through SimplyBook.me. Choose a time that suits and the room is yours.</p>
+      <a class="btn" data-link="booking" href="https://simplybook.me/">Check availability
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+      <p class="rates">From [YOUR RATE] per hour · [HALF-DAY RATE] half day · [FULL-DAY RATE] full day</p>
+    </div>
+    <ol class="steps">
+      <li><span class="steps__n">1</span><span>Pick a date and time on SimplyBook.me</span></li>
+      <li><span class="steps__n">2</span><span>Confirm your booking</span></li>
+      <li><span class="steps__n">3</span><span>Arrive, set up and shoot</span></li>
+    </ol>
+  </section>
+
+  <footer class="panel footer on-dark" id="contact">
+    <div class="footer__top">
+      <div class="display footer__brand">Your Studio</div>
+      <div class="footer__actions">
+        <a class="btn btn--small btn--outline-light" data-link="instagram" href="https://www.instagram.com/">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a class="btn btn--small btn--yellow" data-link="booking" href="https://simplybook.me/">Book the room</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div><div class="eyebrow">Visit</div><address style="font-style: normal">[STREET ADDRESS]<br>[SUBURB, CITY]</address></div>
+      <div><div class="eyebrow">Email</div><a data-link="email" href="mailto:hello@example.com"><span data-text="email">[hello@yourdomain]</span></a></div>
+      <div><div class="eyebrow">Phone</div><div>[PHONE NUMBER]</div></div>
+      <div><div class="eyebrow">Hours</div><div>[OPENING HOURS]<br>By booking only</div></div>
+    </div>
+    <div class="footer__base">
+      <span>© <span id="year">2026</span> Your Studio</span>
+      <a data-link="instagram" href="https://www.instagram.com/"><span data-text="handle">@[yourhandle]</span></a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/* Set your links here once. Leave a value as '' to keep the placeholder. */
+var SITE = {
+  bookingUrl: '',        // e.g. 'https://yourstudio.simplybook.me'
+  instagramUrl: '',      // e.g. 'https://www.instagram.com/yourhandle'
+  instagramHandle: '',   // e.g. '@yourhandle'
+  email: ''              // e.g. 'hello@yourstudio.com'
+};
+
+(function () {
+  function each(selector, fn) { Array.prototype.forEach.call(document.querySelectorAll(selector), fn); }
+
+  if (SITE.bookingUrl) each('[data-link="booking"]', function (a) { a.href = SITE.bookingUrl; });
+  if (SITE.instagramUrl) each('[data-link="instagram"]', function (a) { a.href = SITE.instagramUrl; });
+  if (SITE.instagramHandle) each('[data-text="handle"]', function (el) { el.textContent = SITE.instagramHandle; });
+  if (SITE.email) {
+    each('[data-link="email"]', function (a) { a.href = 'mailto:' + SITE.email; });
+    each('[data-text="email"]', function (el) { el.textContent = SITE.email; });
+  }
+  each('a[href^="http"]', function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var track = document.getElementById('gallery-track');
+  var prev = document.getElementById('gallery-prev');
+  var next = document.getElementById('gallery-next');
+  function step(dir) { track.scrollBy({ left: dir * track.clientWidth * 0.7 }); }
+  function sync() {
+    var max = track.scrollWidth - track.clientWidth;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+  }
+  prev.addEventListener('click', function () { step(-1); });
+  next.addEventListener('click', function () { step(1); });
+  track.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  sync();
+})();
+</script>
+</body>
+</html>
